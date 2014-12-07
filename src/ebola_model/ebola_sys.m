@@ -1,0 +1,9 @@
+function dxdt = ebola_sys(t,x,p,N)
+    S = x(1);
+    E = x(2);
+    I = x(3);
+    R = x(4);
+    beta = p(1);
+    alpha = p(2);
+    gamma = p(3);
+    dxdt = [-(beta*S*I)/N;(beta*S*I)/N - alpha*E;alpha*E - gamma*I;gamma*I];
